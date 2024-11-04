@@ -8,8 +8,12 @@
 </head>
 <body>
     <h1>Email Finder</h1>
-    <div id="emailsContainer"></div>
+    <div id="emailsContainer" contenteditable="true" style="border: 1px solid #ccc; padding: 10px; min-height: 100px;"></div>
     <button id="copyEmailsButton">Copy</button>
-    <script src="popup.js"></script>
+    <div id="totalEmails">
+        Total emails: <span id="emailCount">0</span>
+        <span id="cursorPosition">Character: 1</span>
+    </div>    
+    <script src="popup.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
