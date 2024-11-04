@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add an event listener for the Copy button
     document.getElementById('copyEmailsButton').addEventListener('click', () => {
-        const emails = document.getElementById('emailsContainer').innerText;
-        copyToClipboard(emails);
+        const emails = document.getElementById('emailsContainer').innerText.split('\n').filter(email => email.trim() !== ''); // Split and filter emails
+        const formattedEmails = emails.join(', '); // Join emails with a comma and a space
+        copyToClipboard(formattedEmails); // Use the formatted emails for copying
     });
 });
 
