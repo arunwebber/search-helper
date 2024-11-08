@@ -9,32 +9,28 @@ body {
     overflow: hidden; /* Prevent overflow */
 }
 
-h1 {
-    font-size: 20px;
-    text-align: center;
-    color: #333;
-    margin-bottom: 10px;
+#headerContainer {
+    display: flex; /* Use flexbox to align the title and buttons */
+    justify-content: space-between; /* Space between title and buttons */
+    align-items: center; /* Vertically center them */
+    margin-bottom: 10px; /* Space between header and the next section */
 }
 
-#emailsContainer {
-    padding: 10px; /* Add padding to the emails container */
-    background-color: #fff; /* White background for emails container */
-    border-radius: 4px; /* Rounded corners */
-    border: 1px solid #ddd; /* Border around the emails container */
-    max-height: 200px; /* Max height for scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
+h1 {
+    font-size: 20px;
+    color: #333;
+    margin: 0; /* Remove margin so that title aligns better */
+    flex-grow: 1; /* Allow the title to take available space */
 }
 
 #fontSizeControls {
-    display: flex;
-    justify-content: flex-start; /* Align items to the start */
-    gap: 5px; /* Space between + and - buttons */
-    margin-bottom: 10px; /* Space below the font size controls */
+    display: flex; /* Use flexbox to align buttons */
+    gap: 10px; /* Add spacing between buttons */
 }
 
 #fontSizeControls button {
     width: 30px; /* Smaller width */
-    height: 30px; /* Smaller height */
+    height: 20px; /* Smaller height */
     padding: 0; /* Remove extra padding */
     font-size: 16px; /* Font size */
     color: white; /* White text color */
@@ -46,6 +42,15 @@ h1 {
 
 #fontSizeControls button:hover {
     opacity: 0.8; /* Slightly reduce opacity on hover */
+}
+
+#emailsContainer {
+    padding: 10px; /* Add padding to the emails container */
+    background-color: #fff; /* White background for emails container */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ddd; /* Border around the emails container */
+    max-height: 200px; /* Max height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 button#copyEmailsButton {
@@ -69,4 +74,5 @@ button#copyEmailsButton:hover {
 #totalEmails {
     font-size: 14px;
     color: #333;
+    text-align: center; /* Center the text horizontally */
 }

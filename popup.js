@@ -67,12 +67,13 @@ function changeFontSize(increase = true) {
     const emailsContainer = document.getElementById('emailsContainer');
     const selection = window.getSelection();
 
+    // If there is selected text
     if (selection.rangeCount > 0 && selection.toString()) {
         const range = selection.getRangeAt(0);
         const selectedText = range.cloneContents();
 
         const span = document.createElement('span');
-        span.style.fontSize = increase ? 'larger' : 'smaller';
+        span.style.fontSize = increase ? 'larger' : 'smaller'; // Change size of selected text
         span.appendChild(selectedText);
 
         range.deleteContents();
@@ -83,10 +84,12 @@ function changeFontSize(increase = true) {
         newRange.selectNodeContents(span);
         selection.addRange(newRange);
     } else {
+        // If no text is selected, change the font size of the entire emails container
         let currentFontSize = parseFloat(window.getComputedStyle(emailsContainer, null).getPropertyValue('font-size'));
         emailsContainer.style.fontSize = increase ? (currentFontSize + 2) + 'px' : Math.max(10, currentFontSize - 2) + 'px';
     }
 }
+
 
 // Continuous font size change variables
 let fontSizeInterval;
