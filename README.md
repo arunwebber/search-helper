@@ -1,4 +1,4 @@
-# Email Finder Chrome Extension
+# Email Parser Chrome Extension
 
 This is a Chrome extension that extracts email addresses from the current page and provides functionalities to view, copy, and adjust the font size of the email list. It allows users to easily copy email addresses, change their font size, and manage selected text for customization.
 
@@ -15,7 +15,7 @@ This is a Chrome extension that extracts email addresses from the current page a
 1. **Clone the repository or download the ZIP file.**
    - To clone, run:
      ```bash
-     git clone https://github.com/your-username/email-finder-extension.git
+     git clone git clone https://github.com/arunwebber/email-parser.git
      ```
 
 2. **Load the extension in Chrome:**
