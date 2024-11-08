@@ -56,19 +56,65 @@ function displayEmails(emails) {
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
         // Log success to console and close the popup
-        console.log("Emails copied to clipboard:", text);
         window.close(); // Close the popup
     }).catch(err => {
         console.error('Failed to copy: ', err);
     });
 }
 
+// Function to change font size for selected text or entire container
+function changeFontSize(increase = true) {
+    const emailsContainer = document.getElementById('emailsContainer');
+    const selection = window.getSelection();
+
+    if (selection.rangeCount > 0 && selection.toString()) {
+        const range = selection.getRangeAt(0);
+        const selectedText = range.cloneContents();
+
+        const span = document.createElement('span');
+        span.style.fontSize = increase ? 'larger' : 'smaller';
+        span.appendChild(selectedText);
+
+        range.deleteContents();
+        range.insertNode(span);
+
+        selection.removeAllRanges();
+        const newRange = document.createRange();
+        newRange.selectNodeContents(span);
+        selection.addRange(newRange);
+    } else {
+        let currentFontSize = parseFloat(window.getComputedStyle(emailsContainer, null).getPropertyValue('font-size'));
+        emailsContainer.style.fontSize = increase ? (currentFontSize + 2) + 'px' : Math.max(10, currentFontSize - 2) + 'px';
+    }
+}
+
+// Continuous font size change variables
+let fontSizeInterval;
+
+function startFontSizeChange(increase) {
+    fontSizeInterval = setInterval(() => {
+        changeFontSize(increase);
+    }, 100); // Adjust interval as needed
+}
+
+function stopFontSizeChange() {
+    clearInterval(fontSizeInterval);
+}
+
+// Event listeners for continuous font size change on + and - buttons
+document.getElementById('increaseFontSize').addEventListener('mousedown', () => startFontSizeChange(true));
+document.getElementById('increaseFontSize').addEventListener('mouseup', stopFontSizeChange);
+document.getElementById('increaseFontSize').addEventListener('mouseleave', stopFontSizeChange);
+
+document.getElementById('decreaseFontSize').addEventListener('mousedown', () => startFontSizeChange(false));
+document.getElementById('decreaseFontSize').addEventListener('mouseup', stopFontSizeChange);
+document.getElementById('decreaseFontSize').addEventListener('mouseleave', stopFontSizeChange);
+
 // Function to update and display the total count of emails
 function updateEmailCount(count) {
     const emailCountElement = document.getElementById('emailCount'); // Reference to the count span
     emailCountElement.innerText = count; // Update the count displayed in the popup
 }
-
 
 function updateStatus() {
     const textArea = document.getElementById('emailsContainer'); // Reference to the editable div
@@ -104,7 +150,7 @@ function getCursorPosition(element) {
         characterCount += lines[i].length + 1; // +1 for the line break
         if (characterCount > cursorIndex) {
             line = i + 1; // Line is 1-indexed
-            col = cursorIndex - (characterCount - lines[i].length - 1); // Calculate column
+            col = cursorIndex - (characterCount - lines[i].length ); // Calculate column
             break;
         }
     }
@@ -116,4 +162,3 @@ function getCursorPosition(element) {
 document.getElementById('emailsContainer').addEventListener('input', updateStatus);
 document.getElementById('emailsContainer').addEventListener('click', updateStatus);
 document.getElementById('emailsContainer').addEventListener('keyup', updateStatus);
-
