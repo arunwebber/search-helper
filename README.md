@@ -15,7 +15,7 @@ This is a Chrome extension that extracts email addresses from the current page a
 1. **Clone the repository or download the ZIP file.**
    - To clone, run:
      ```bash
-     git clone git clone https://github.com/arunwebber/email-parser.git
+        git clone https://github.com/arunwebber/email-parser.git
      ```
 
 2. **Load the extension in Chrome:**
