@@ -76,3 +76,11 @@ button#copyEmailsButton:hover {
     color: #333;
     text-align: center; /* Center the text horizontally */
 }
+
+#credentials {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    color: #030303; /* White text for contrast against dark background */
+    text-align: center; /* Center the text horizontally */
+    background-color: hsl(0, 27%, 96%); /* Dark gray background */
+}
