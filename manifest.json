@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Email Parser",
+    "name": "Search Assister",
     "version": "1.0",
-    "description": "Finds and displays emails from the current page.",
+    "description": "Helping you to search.",
     "permissions": [
         "activeTab",
         "scripting"

@@ -3,26 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Parser</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <title>Search Extension</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="headerContainer">
-        <h1>Email Parser</h1>
-        <div id="fontSizeControls">
-            <button id="increaseFontSize">+</button>
-            <button id="decreaseFontSize">-</button>
+        <h1>Search Extension</h1>
+    </div>
+    <div id="searchContainer">
+        <div id="lineTextAreaContainer">
+            <div id="lineNumbers"></div>
+            <textarea id="searchQuery" placeholder="Enter your search query" oninput="updateLineNumbers()" onscroll="syncScroll()"></textarea>
+            <div id="searchButtonsContainer"></div>
         </div>
     </div>
-    <div id="emailsContainer" contenteditable="true" style="border: 1px solid #ccc; padding: 10px; min-height: 100px;"></div>
-    <button id="copyEmailsButton">Copy</button>
-    <div id="totalEmails">
-        Total emails: <span id="emailCount">0</span>
-        <span id="cursorPosition">Character: 1</span>
-    </div>  
-    <div id="credentials">
-        hashPalLabs - Tech Division of arunsyoga.in
-    </div>  
-    <script src="popup.js"></script> <!-- Link to your JavaScript file -->
+    <script src="popup.js"></script>
 </body>
 </html>
