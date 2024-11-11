@@ -22,9 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Generate line numbers and search buttons for each line
         for (let i = 1; i <= lineCount; i++) {
-            lineNumbers += i + '<br>';
+            lineNumbers += i + '<br>'; // Add line number
             searchButtonsHTML += `
-                <button class="searchButton" data-line="${i}">Search</button>
+                <button class="searchButton" data-line="${i}">
+                    Search${i} <!-- Display line number on the button -->
+                </button>
             `;
         }
 

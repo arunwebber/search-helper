@@ -26,8 +26,8 @@ h1 {
 #searchContainer {
     display: flex;
     flex-direction: column;
-    height: 150px;
     width: 100%;
+    height: 250px;  /* Increased height to accommodate both text area and buttons */
 }
 
 #lineTextAreaContainer {
@@ -35,6 +35,8 @@ h1 {
     flex-grow: 1;
     position: relative;
     width: 100%;
+    align-items: flex-start;  /* Align all items at the start */
+    padding: 10px;
 }
 
 #searchQuery {
@@ -48,7 +50,7 @@ h1 {
     border: 1px solid #ddd;
     border-radius: 4px;
     resize: none;
-    line-height: 1.5;
+    line-height: 1.8;  /* Increased line-height for more space between lines */
     box-sizing: border-box;
     overflow: auto;
     white-space: nowrap;
@@ -60,10 +62,13 @@ h1 {
     color: #333;
     user-select: none;
     padding-right: 10px;
-    line-height: 1.5;
+    line-height: 1.8;  /* Increased line-height for line numbers */
     text-align: right;
     overflow-y: auto;
     height: 100%;
+    padding-top: 10px;  /* Ensure alignment with the text area */
+    margin-top: 0;      /* Ensure no offset at the top */
+    width: 50px;        /* Set width for line numbers */
 }
 
 #searchButtonsContainer {
@@ -76,21 +81,21 @@ h1 {
     margin-left: 10px; /* Add margin between buttons and text area */
     position: relative;
     width: 60px; /* Set fixed width for the button container */
-    height: 100%; /* Make it scrollable with the text area */
+    height: a; /* Make it scrollable with the text area */
     overflow-y: auto;
 }
 
 button.searchButton {
-    font-size: 11px;
-    padding: 3px 6px;
-    margin-top: 2px;
+    font-size: 12px; /* Adjust font size for better readability */
+    padding: 5px 10px;
+    margin-top: 1px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     width: 60px;
-    height: 20px;
+    height: 24.2px; /* Adjust height for better visual appeal */
 }
 
 button.searchButton:hover {
@@ -99,16 +104,16 @@ button.searchButton:hover {
 
 button#searchButton {
     width: 100%;
-    height: 20px; /* Further reduced height */
-    padding: 0; /* Remove padding */
+    height: 35px;
+    padding: 0;
     color: white;
     background-color: #007bff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 12px; /* Smaller font size */
+    font-size: 12px; /* Adjust font size */
     box-sizing: border-box;
-    margin-top: 5px; /* Adjusted margin for compactness */
+    margin-top: 10px; /* Adjust spacing between button and other elements */
 }
 
 button#searchButton:hover {
