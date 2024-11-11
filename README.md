@@ -39,7 +39,7 @@ Once installed, click the extension icon in your browser toolbar to open the pop
 
 ### How to Use
 1. **Enter Text**: Begin typing in the text area. As you type, the text area will expand vertically.
-2. **Trigger Search**: Use the **Search** button to execute a query or use custom buttons to perform specific actions.
+2. **Trigger Search**: Use the **Search** button to execute a query.
 
 
 ## Contributing
