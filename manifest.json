@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Search Assister",
+    "name": "Search Assistor",
     "version": "1.0",
     "description": "Helping you to search.",
     "permissions": [
