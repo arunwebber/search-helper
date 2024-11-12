@@ -8,14 +8,22 @@
 </head>
 <body>
     <div id="headerContainer">
-        <h1>Search Assistor.</h1>
+        <h1>Search Assistor</h1>
     </div>
     <div id="searchContainer">
+        <!-- Radio buttons for search engine selection -->
+        <div id="searchEngineContainer">
+            <label><input type="radio" name="searchEngine" value="google" checked> Google</label>
+            <label><input type="radio" name="searchEngine" value="bing"> Bing</label>
+            <label><input type="radio" name="searchEngine" value="duckduckgo"> DuckDuckGo</label>
+        </div>
         <div id="lineTextAreaContainer">
             <div id="lineNumbers"></div>
             <textarea id="searchQuery" placeholder="Enter your search query" oninput="updateLineNumbers()" onscroll="syncScroll()"></textarea>
             <div id="searchButtonsContainer"></div>
         </div>
+        <!-- Message container for displaying feedback -->
+        <div id="messageContainer"></div>
     </div>
     <script src="popup.js"></script>
 </body>

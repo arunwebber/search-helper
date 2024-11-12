@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchQuery = document.getElementById('searchQuery');
     const searchButtonsContainer = document.getElementById('searchButtonsContainer');
     const lineNumbersDiv = document.getElementById('lineNumbers');
+    const messageContainer = document.getElementById('messageContainer'); // Select the message container
 
     // Load saved content from localStorage when popup opens
     const savedContent = localStorage.getItem('textContent');
@@ -50,15 +51,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const lineContent = lines[lineNumber - 1].trim(); // Get the content of the specific line
 
         if (lineContent) {
-            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(lineContent)}`;
+            // Determine selected search engine
+            const selectedEngine = document.querySelector('input[name="searchEngine"]:checked').value;
+            let searchUrl;
+
+            // Construct search URL based on selected search engine
+            if (selectedEngine === 'google') {
+                searchUrl = `https://www.google.com/search?q=${encodeURIComponent(lineContent)}`;
+            } else if (selectedEngine === 'bing') {
+                searchUrl = `https://www.bing.com/search?q=${encodeURIComponent(lineContent)}`;
+            } else if (selectedEngine === 'duckduckgo') {
+                searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(lineContent)}`;
+            }
 
             // Perform search
             chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
                 const currentTab = tabs[0];
                 chrome.tabs.update(currentTab.id, { url: searchUrl });
             });
+
+            // Clear message container
+            messageContainer.textContent = "";
         } else {
-            alert('The line is empty. Please enter content first!');
+            // Show message if the line is empty
+            messageContainer.textContent = 'The line is empty. Please enter content first!';
         }
     }
 

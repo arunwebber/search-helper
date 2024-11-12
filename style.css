@@ -20,16 +20,21 @@ h1 {
     color: #333;
     margin: 0;
     flex-grow: 1;
-    text-align: center;  /* Center align the text */
-
+    text-align: center; /* Center align the text */
 }
 
 #searchContainer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 250px;  /* Increased height to accommodate both text area and buttons */
-    
+    height: 250px; /* Increased height to accommodate both text area and buttons */
+}
+
+#searchEngineContainer {
+    display: flex;
+    justify-content: center; /* Center align the radio buttons */
+    gap: 10px; /* Space between radio buttons */
+    margin-bottom: 10px;
 }
 
 #lineTextAreaContainer {
@@ -37,7 +42,7 @@ h1 {
     flex-grow: 1;
     position: relative;
     width: 100%;
-    align-items: flex-start;  /* Align all items at the start */
+    align-items: flex-start; /* Align all items at the start */
     padding: 10px;
 }
 
@@ -52,7 +57,7 @@ h1 {
     border: 1px solid #ddd;
     border-radius: 4px;
     resize: none;
-    line-height: 1.8;  /* Increased line-height for more space between lines */
+    line-height: 1.8; /* Increased line-height for more space between lines */
     box-sizing: border-box;
     overflow: auto;
     white-space: nowrap;
@@ -64,13 +69,13 @@ h1 {
     color: #333;
     user-select: none;
     padding-right: 10px;
-    line-height: 1.8;  /* Increased line-height for line numbers */
+    line-height: 1.8; /* Increased line-height for line numbers */
     text-align: right;
     overflow-y: auto;
     height: 100%;
-    padding-top: 10px;  /* Ensure alignment with the text area */
-    margin-top: 0;      /* Ensure no offset at the top */
-    width: 50px;        /* Set width for line numbers */
+    padding-top: 10px; /* Ensure alignment with the text area */
+    margin-top: 0; /* Ensure no offset at the top */
+    width: 50px; /* Set width for line numbers */
 }
 
 #searchButtonsContainer {
@@ -83,7 +88,6 @@ h1 {
     margin-left: 10px; /* Add margin between buttons and text area */
     position: relative;
     width: 60px; /* Set fixed width for the button container */
-    height: a; /* Make it scrollable with the text area */
     overflow-y: auto;
 }
 
@@ -120,4 +124,12 @@ button#searchButton {
 
 button#searchButton:hover {
     opacity: 0.8;
+}
+
+/* Error message styling */
+#messageContainer {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center; /* Center align the message */
 }
