@@ -1,4 +1,3 @@
-```markdown
 # Search Assistant Extension
 
 The **Search Assistant** extension is a browser tool designed to help users easily input and search queries with a dynamic, user-friendly interface. This extension features a text input area, line numbers for easier tracking, and customizable search functionalities.
@@ -58,4 +57,3 @@ We welcome contributions! If you'd like to improve the Search Assistant Extensio
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
