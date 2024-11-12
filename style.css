@@ -133,3 +133,14 @@ button#searchButton:hover {
     margin-top: 5px;
     text-align: center; /* Center align the message */
 }
+
+#credentials {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #030303; /* Dark gray text */
+    text-align: center; /* Center the text horizontally */
+    background-color: hsl(0, 0%, 96%); /* Light gray background */
+    padding: 10px; /* Optional: add some padding */
+}
