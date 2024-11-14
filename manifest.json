@@ -20,9 +20,6 @@
         "48": "images/icon_48.png",
         "128": "images/icon_128.png"
     },
-    "homepage_url": "https://www.arunsyoga.in", 
-    "developer": {
-      "name": "ArunWebber",
-      "url": "https://github.com/arunwebber/search-helper"
-    }
+  "homepage_url": "https://www.arunsyoga.in", 
+  "author": "HashPalLabs"
 }
