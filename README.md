@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/arunwebber/search-helper/refs/heads/main/images/icon_128.png" alt="Search Helper Icon" width="128" height="128">
+</p>
+
 # Search Assistant Extension
 
 The **Search Assistant** extension is a browser tool designed to help users easily input and search queries with a dynamic, user-friendly interface. This extension features a text input area, line numbers for easier tracking, and customizable search functionalities.
